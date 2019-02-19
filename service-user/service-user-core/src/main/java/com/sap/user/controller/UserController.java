@@ -30,4 +30,16 @@ public class UserController extends BaseController {
     userService.insertTestUser();
     return userService.getAllUsers();
   }
+
+  @RequestMapping(value = "/getUserById", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+  @ResponseBody
+  public Object want(
+          @RequestParam(value = "userId", required = false) String userId
+  ) {
+    if (userId == null) {
+      return userService.getAllUsers();
+    } else {
+      return userService.whateverName(userId);
+    }
+  }
 }

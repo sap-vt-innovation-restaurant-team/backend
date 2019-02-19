@@ -9,4 +9,6 @@ public interface UserService extends BaseService {
   List<UserEO> getAllUsers();
 
   void insertTestUser();
+
+  UserEO whateverName(String userId);
 }

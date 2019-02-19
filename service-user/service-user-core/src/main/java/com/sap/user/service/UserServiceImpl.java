@@ -25,4 +25,10 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     userEO.setEmail("test@sap.com");
     userRepository.save(userEO);
   }
+
+  @Override
+  public UserEO whateverName(String userId) {
+    userId = userId + "test";
+    return userRepository.findById(userId);
+  }
 }
