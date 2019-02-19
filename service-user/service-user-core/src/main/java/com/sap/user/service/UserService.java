@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface UserService extends BaseService {
   List<UserEO> getAllUsers();
+
+  void insertTestUser();
 }

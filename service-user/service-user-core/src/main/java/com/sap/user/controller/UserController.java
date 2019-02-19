@@ -23,4 +23,11 @@ public class UserController extends BaseController {
   public Object count() {
     return userService.getAllUsers();
   }
+
+  @RequestMapping(value = "/insert", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+  @ResponseBody
+  public Object insert() {
+    userService.insertTestUser();
+    return userService.getAllUsers();
+  }
 }

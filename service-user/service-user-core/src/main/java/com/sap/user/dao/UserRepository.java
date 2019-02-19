@@ -2,9 +2,11 @@ package com.sap.user.dao;
 
 import com.sap.user.domain.UserEO;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface UserRepository extends MongoRepository<UserEO, String> {
   UserEO findById(String id);
 
@@ -13,8 +15,6 @@ public interface UserRepository extends MongoRepository<UserEO, String> {
   UserEO findByEmail(String email);
 
   List<UserEO> findAll();
-
-  int countAll();
 
   void deleteAll();
 }

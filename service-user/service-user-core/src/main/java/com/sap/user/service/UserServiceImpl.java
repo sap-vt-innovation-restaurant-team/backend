@@ -10,12 +10,19 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
-  //@Autowired
-  //private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
   @Override
   public List<UserEO> getAllUsers() {
-    //return userRepository.findAll();
-    return null;
+    return userRepository.findAll();
+  }
+
+  @Override
+  public void insertTestUser() {
+    UserEO userEO = new UserEO();
+    userEO.setNickname("tester");
+    userEO.setEmail("test@sap.com");
+    userRepository.save(userEO);
   }
 }

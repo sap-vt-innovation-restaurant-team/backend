@@ -11,14 +11,6 @@ public class UserEO {
 
   private String email;
 
-  public UserEO() {}
-
-  public UserEO(String id, String nickname, String email) {
-    this.id = id;
-    this.nickname = nickname;
-    this.email = email;
-  }
-
   public String getId() {
     return id;
   }
@@ -41,14 +33,5 @@ public class UserEO {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  @Override
-  public String toString() {
-    return "UserEO{" +
-            "id='" + id + '\'' +
-            "nickname='" + nickname + '\'' +
-            ", email='" + email + '\'' +
-            '}';
   }
 }
