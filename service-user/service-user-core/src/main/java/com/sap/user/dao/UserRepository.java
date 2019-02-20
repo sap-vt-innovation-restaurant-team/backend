@@ -14,6 +14,8 @@ public interface UserRepository extends MongoRepository<UserEO, String> {
 
   UserEO findByEmail(String email);
 
+  UserEO findByphoneNumber(String phoneNumber);
+
   List<UserEO> findAll();
 
   void deleteAll();

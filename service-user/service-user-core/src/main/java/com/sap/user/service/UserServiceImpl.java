@@ -31,4 +31,20 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     userId = userId + "test";
     return userRepository.findById(userId);
   }
+
+  @Override
+  public int returnStatus(String phoneNumber) {
+
+      if(userRepository.findByphoneNumber(phoneNumber)!= null)
+          return 1;         // 1 ---- User has already existed.
+      else
+      {
+          UserEO userEO = new UserEO();
+          userEO.setPhoneNumber(phoneNumber);
+          userRepository.save(userEO);
+          return 0;        // 0 ---- User registered successfully.
+      }
+  }
+
+
 }

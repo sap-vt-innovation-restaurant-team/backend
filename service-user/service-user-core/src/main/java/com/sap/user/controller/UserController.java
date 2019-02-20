@@ -42,4 +42,13 @@ public class UserController extends BaseController {
       return userService.whateverName(userId);
     }
   }
+
+  @RequestMapping(value = "/register")
+  public Object register(
+          @RequestParam(value = "phoneNumber", required = true) String phoneNumber
+  ) {
+    return userService.returnStatus(phoneNumber);
+  }
+
+
 }
