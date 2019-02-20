@@ -12,6 +12,8 @@ public interface DishRepository extends MongoRepository<DishEO, String> {
 
     DishEO findByName(String name);
 
+    List<DishEO> findAllByType(String type);
+
     List<DishEO> findAll();
 
     void deleteAll();

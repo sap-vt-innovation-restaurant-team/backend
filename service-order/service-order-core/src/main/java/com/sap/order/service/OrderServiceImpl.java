@@ -61,12 +61,11 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
     public List<DishEO> getDishesByTag(String tagName) {
         tagName = tagName.toLowerCase();
         List<DishEO> dishes = dishRepository.findAll();
-        List<DishEO> results = new ArrayList();
+        List<DishEO> results = new ArrayList<>();
         for (int i = 0; i < dishes.size(); i++) {
-            List<String> tags = new ArrayList<>();
-            tags = dishes.get(i).getTags();
+            List<String> tags = dishes.get(i).getTags();
             for (int j = 0; j < tags.size(); j++) {
-                if (tagName == tags.get(j).toLowerCase()) {
+                if (tagName.equals(tags.get(j).toLowerCase())) {
                     results.add(dishes.get(i));
                     break;
                 } else {
@@ -83,7 +82,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
     }
 
     @Override
-    public List<String> getTagsByDish(String dishName) {
+    public List<String> getTagsByDishName(String dishName) {
         DishEO dish = dishRepository.findByName(dishName);
         return dish.getTags();
     }
@@ -91,6 +90,27 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
     @Override
     public List<DishEO> getDishesByOrderId(String orderId) {
         OrderEO order = orderRepository.findById(orderId);
-        return order.getDishes();
+        List<DishEO> results = new ArrayList<>();
+        List<String> ids = order.getDishIds();
+        for (int i = 0; i < ids.size(); i++) {
+            results.add(dishRepository.findById(ids.get(i)));
+        }
+        return results;
     }
+
+    @Override
+    public DishEO getDishById(String string) {
+        return dishRepository.findById(string);
+    }
+
+    @Override
+    public List<DishEO> getDishesByType(String type) {
+        return dishRepository.findAllByType(type);
+    }
+
+    @Override
+    public List<OrderEO> getOrdersByUserId(String id) {
+        return orderRepository.findAllByUserid(id);
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.sap.order.dao;
 
 import com.sap.order.domain.*;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,7 @@ public interface OrderRepository extends MongoRepository<OrderEO, String> {
 
     List<OrderEO> findAll();
 
-    void deleteAll();
+    List<OrderEO> findAllByUserid(String id);
 
+    void deleteAll();
 }

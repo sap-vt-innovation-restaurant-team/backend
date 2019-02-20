@@ -9,7 +9,9 @@ public class OrderEO {
     @Id
     private String id;
 
-    private List<DishEO> dishes;
+    private String userid;
+
+    private List<String> dishIds;
 
     public String getId() {
         return id;
@@ -19,11 +21,19 @@ public class OrderEO {
         this.id = id;
     }
 
-    public List<DishEO> getDishes() {
-        return dishes;
+    public List<String> getDishIds() {
+        return dishIds;
     }
 
-    public void setDishes(List<DishEO> dishes) {
-        this.dishes = dishes;
+    public void setDishIds(List<String> dishIds) {
+        this.dishIds = dishIds;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 }

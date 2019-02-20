@@ -16,34 +16,38 @@ public class OrderController extends BaseController {
     private OrderService orderService;
 
     @RequestMapping(value = "/getAllDishes", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
     public List<DishEO> getAllDishes() {
         return orderService.getAllDishs();
     }
 
     @RequestMapping(value = "/getAllTags", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
     public String[] getAllTags() {
         return orderService.getAllTags();
     }
 
     @RequestMapping(value = "/getDishesByTag", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
     public List<DishEO> getDishesByTag(@RequestParam(value = "tagName") String tagName) {
         return orderService.getDishesByTag(tagName);
     }
 
     @RequestMapping(value = "/getDishesByOrderId", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
     public List<DishEO> getDishesByOrderId(@RequestParam(value = "orderId") String orderId) {
         return orderService.getDishesByOrderId(orderId);
     }
 
-    @RequestMapping(value = "/getTagsByDish", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
-    public List<String> getTagsByDish(@RequestParam(value = "dishName") String dishName) {
-        return orderService.getTagsByDish(dishName);
+    @RequestMapping(value = "/getTagsByDishName", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
+    public List<String> getTagsByDishName(@RequestParam(value = "dishName") String dishName) {
+        return orderService.getTagsByDishName(dishName);
     }
 
     @RequestMapping(value = "/insertOrder", method = RequestMethod.POST, produces = HttpConstants.PRODUCE_JSON)
     @ResponseBody
     public Object insertOrder(@RequestBody OrderEO orderEO) {
-        System.out.println("testing");
         return orderService.insertOrder(orderEO);
     }
 
@@ -59,4 +63,21 @@ public class OrderController extends BaseController {
         return orderService.getDishesByName(dishName);
     }
 
+    @RequestMapping(value = "/getDishById", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
+    public DishEO getDishById(@RequestParam(value = "dishId") String dishId) {
+        return orderService.getDishById(dishId);
+    }
+
+    @RequestMapping(value = "/getDishesByType", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
+    public Object getDishesByType(@RequestParam(value = "type") String type) {
+        return orderService.getDishesByType(type);
+    }
+
+    @RequestMapping(value = "/getOrdersByUserId", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
+    public List<OrderEO> getOrdersByUserId(@RequestParam(value = "userId") String userId) {
+        return orderService.getOrdersByUserId(userId);
+    }
 }

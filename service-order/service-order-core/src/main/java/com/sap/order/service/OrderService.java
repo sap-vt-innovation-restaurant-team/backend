@@ -2,6 +2,7 @@ package com.sap.order.service;
 
 import com.sap.common.service.BaseService;
 import com.sap.order.domain.*;
+import org.aspectj.weaver.ast.Or;
 
 import java.util.*;
 
@@ -25,7 +26,14 @@ public interface OrderService extends BaseService {
 
     String[] getAllTags();
 
-    List<String> getTagsByDish(String dishName);
+    List<String> getTagsByDishName(String dishName);
 
     List<DishEO> getDishesByOrderId(String orderId);
+
+    DishEO getDishById(String string);
+
+    List<DishEO> getDishesByType(String type);
+
+    List<OrderEO> getOrdersByUserId(String id);
+
 }
