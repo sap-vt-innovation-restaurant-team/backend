@@ -11,5 +11,27 @@
 
     <artifactId>service-order-core</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.sap.restaurant</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sap.restaurant</groupId>
+            <artifactId>service-order-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
