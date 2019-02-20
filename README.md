@@ -32,6 +32,7 @@ mvn clean install package
 ### URL
 
 #### GET
+```
 /order/getAllTags
 /order/getAllDishes
 /order/getTagsByDishName?dishName=Radler
@@ -41,11 +42,14 @@ mvn clean install package
 /order/getDishesByType?type=Beverage
 /order/getDishesByTag?tagName=Icy
 /order/getOrdersByUserId?userId=123456
+```
 
 #### POST 
+```
 order/insertOrder
 body:
 {
 	"userid":"123456",
 	"dishIds":["5c6d21e42f26596bdcc0fbed"]
 }
+```
