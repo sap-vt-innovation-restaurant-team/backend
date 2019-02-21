@@ -41,7 +41,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
       else
       {
           userRepository.save(userEO);
-          return userEO.getId();        // 0 ---- User registered successfully.
+          return userRepository.findByphoneNumber(userEO.getPhoneNumber()).getId();        // 0 ---- User registered successfully.
       }
   }
 
