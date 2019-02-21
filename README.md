@@ -67,9 +67,12 @@ output:
 ```
 
 ## User
+#### GET
+10.87.137.56:12306/user/getUserById?userId=5c6ee0d6484fa34c6ccf32cd
+
+#### POST
 ```
-IP:10.87.137.56
-/user/register
+10.87.137.56:12306/user/register
 body:
 {
 	"nickname": "Zoe",
