@@ -29,24 +29,24 @@ mvn clean install package
 
 
 
-### API
+### URL
 
 #### GET
 ```
-10.87.131.170:12306/order/getAllTags
-10.87.131.170:12306/order/getAllDishes
-10.87.131.170:12306/order/getTagsByDishName?dishName=Radler
-10.87.131.170:12306/order/getDishesByOrderId?orderId=5c6d5efb010b0523a07c7bec
-10.87.131.170:12306/order/getDishesByName?dishName=Weizenbier
-10.87.131.170:12306/order/getDishById?dishId=5c6d2c342f26596bdcc0fbf4
-10.87.131.170:12306/order/getDishesByType?type=Beverage
-10.87.131.170:12306/order/getDishesByTag?tagName=Icy
-10.87.131.170:12306/order/getOrdersByUserId?userId=123456
+/order/getAllTags
+/order/getAllDishes
+/order/getTagsByDishName?dishName=Radler
+/order/getDishesByOrderId?orderId=5c6d5efb010b0523a07c7bec
+/order/getDishesByName?dishName=Weizenbier
+/order/getDishById?dishId=5c6d2c342f26596bdcc0fbf4
+/order/getDishesByType?type=Beverage
+/order/getDishesByTag?tagName=Icy
+/order/getOrdersByUserId?userId=123456
 ```
 
 #### POST 
 ```
-10.87.131.170:12306/order/insertOrder
+order/insertOrder
 body:
 {
 	"userid":"123456",
@@ -54,7 +54,7 @@ body:
 }
 
 
-127.0.0.1:5000/api/getRecommendation
+http://127.0.0.1:5000/api/getRecommendation
 body:
 {
 	"id":"1"   //this is should be the "sid" of dish, "sid" is used to call api of recommendation, which limits the id to be int type.
@@ -62,4 +62,16 @@ body:
 output:
 {"ids": ["64149", "296478", "298430", "355275", "380824"]}
 
+```
+
+#### Zoe
+```
+IP:10.87.137.56
+/user/register
+body:
+{
+	"nickname": "Zoe",
+	"email": "123456@sap.com",
+	"phoneNumber": "18704284876"
+}
 ```
