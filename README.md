@@ -52,4 +52,14 @@ body:
 	"userid":"123456",
 	"dishIds":["5c6d21e42f26596bdcc0fbed"]
 }
+
+
+http://127.0.0.1:5000/api/getRecommendation
+body:
+{
+	"id":"1"
+}
+output:
+{"ids": ["64149", "296478", "298430", "355275", "380824"]}
+
 ```
