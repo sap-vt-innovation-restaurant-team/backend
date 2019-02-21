@@ -29,24 +29,25 @@ mvn clean install package
 
 
 
-### URL
+# API 
+## Order & Dish
 
 #### GET
 ```
-/order/getAllTags
-/order/getAllDishes
-/order/getTagsByDishName?dishName=Radler
-/order/getDishesByOrderId?orderId=5c6d5efb010b0523a07c7bec
-/order/getDishesByName?dishName=Weizenbier
-/order/getDishById?dishId=5c6d2c342f26596bdcc0fbf4
-/order/getDishesByType?type=Beverage
-/order/getDishesByTag?tagName=Icy
-/order/getOrdersByUserId?userId=123456
+10.87.131.170:12306/order/getAllTags
+10.87.131.170:12306/order/getAllDishes
+10.87.131.170:12306/order/getTagsByDishName?dishName=Radler
+10.87.131.170:12306/order/getDishesByOrderId?orderId=5c6d5efb010b0523a07c7bec
+10.87.131.170:12306/order/getDishesByName?dishName=Weizenbier
+10.87.131.170:12306/order/getDishById?dishId=5c6d2c342f26596bdcc0fbf4
+10.87.131.170:12306/order/getDishesByType?type=Beverage
+10.87.131.170:12306/order/getDishesByTag?tagName=Icy
+10.87.131.170:12306/order/getOrdersByUserId?userId=123456
 ```
 
 #### POST 
 ```
-order/insertOrder
+10.87.131.170:12306/order/insertOrder
 body:
 {
 	"userid":"123456",
@@ -64,7 +65,7 @@ output:
 
 ```
 
-#### Zoe
+## User
 ```
 IP:10.87.137.56
 /user/register
