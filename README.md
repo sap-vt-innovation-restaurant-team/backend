@@ -55,7 +55,7 @@ body:
 }
 
 
-http://127.0.0.1:5000/api/getRecommendation
+10.87.131.170:8080/api/getRecommendation
 body:
 {
 	"id":"1"   //this is should be the "sid" of dish, "sid" is used to call api of recommendation, which limits the id to be int type.
