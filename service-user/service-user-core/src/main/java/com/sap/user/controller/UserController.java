@@ -40,7 +40,7 @@ public class UserController extends BaseController {
     if (userId == null) {
       return userService.getAllUsers();
     } else {
-      return userService.whateverName(userId);
+      return userService.getUserEO(userId);
     }
   }
 

@@ -44,4 +44,9 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
           return userEO.getId();        // 0 ---- User registered successfully.
       }
   }
+
+  @Override
+  public UserEO getUserEO(String userId){
+      return userRepository.findById(userId);
+  }
 }
