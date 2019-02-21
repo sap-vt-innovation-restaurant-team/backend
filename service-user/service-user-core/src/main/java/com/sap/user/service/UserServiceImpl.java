@@ -4,6 +4,7 @@ import com.sap.common.service.BaseServiceImpl;
 import com.sap.user.dao.UserRepository;
 import com.sap.user.domain.UserEO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.spel.ast.NullLiteral;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,18 +34,14 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
   }
 
   @Override
-  public int returnStatus(String phoneNumber) {
-
-      if(userRepository.findByphoneNumber(phoneNumber)!= null)
-          return 1;         // 1 ---- User has already existed.
+  public String returnUser(UserEO userEO) {
+      String num = userEO.getPhoneNumber();
+      if(userRepository.findByphoneNumber(num)!= null)
+          return "";         // 1 ---- User has already existed.
       else
       {
-          UserEO userEO = new UserEO();
-          userEO.setPhoneNumber(phoneNumber);
           userRepository.save(userEO);
-          return 0;        // 0 ---- User registered successfully.
+          return userEO.getId();        // 0 ---- User registered successfully.
       }
   }
-
-
 }

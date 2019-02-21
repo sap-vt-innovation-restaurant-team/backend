@@ -12,5 +12,6 @@ public interface UserService extends BaseService {
 
   UserEO whateverName(String userId);
 
-  int returnStatus(String phoneNumber);  // return status code which shows whether registration is successful
+  String returnUser(UserEO userEO);  // return status code which shows whether registration is successful
+
 }

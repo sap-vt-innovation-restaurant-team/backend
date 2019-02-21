@@ -3,6 +3,7 @@ package com.sap.user.controller;
 import com.sap.common.constants.HttpConstants;
 import com.sap.common.controller.BaseController;
 import com.sap.user.service.UserService;
+import com.sap.user.domain.UserEO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,12 +44,12 @@ public class UserController extends BaseController {
     }
   }
 
-  @RequestMapping(value = "/register")
+  @RequestMapping(value = "/register", method = RequestMethod.POST, produces = HttpConstants.PRODUCE_JSON)
+  @ResponseBody
   public Object register(
-          @RequestParam(value = "phoneNumber", required = true) String phoneNumber
+          @RequestBody UserEO userEO
   ) {
-    return userService.returnStatus(phoneNumber);
+    return userService.returnUser(userEO);
   }
-
 
 }
