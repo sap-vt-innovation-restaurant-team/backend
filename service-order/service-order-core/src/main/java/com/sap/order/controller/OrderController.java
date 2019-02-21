@@ -80,4 +80,10 @@ public class OrderController extends BaseController {
     public List<OrderEO> getOrdersByUserId(@RequestParam(value = "userId") String userId) {
         return orderService.getOrdersByUserId(userId);
     }
+
+    @RequestMapping(value = "/getRecommendations", method = RequestMethod.GET, produces = HttpConstants.PRODUCE_JSON)
+    @ResponseBody
+    public List<DishEO> getRecommendations(@RequestParam(value = "dishId") String dishId) {
+        return orderService.getRecommendations(dishId);
+    }
 }

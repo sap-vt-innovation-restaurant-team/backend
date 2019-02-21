@@ -36,4 +36,5 @@ public interface OrderService extends BaseService {
 
     List<OrderEO> getOrdersByUserId(String id);
 
+    List<DishEO> getRecommendations(String dishId);
 }

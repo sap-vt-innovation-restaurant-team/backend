@@ -5,8 +5,11 @@ import org.springframework.data.annotation.Id;
 import java.util.*;
 
 public class DishEO {
+
     @Id
     private String id;
+
+    private String sid; //which is just used to send api of recommendation
 
     private String name;
 
@@ -28,6 +31,14 @@ public class DishEO {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 
     public String getName() {

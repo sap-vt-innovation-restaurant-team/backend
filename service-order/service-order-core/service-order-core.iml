@@ -163,5 +163,6 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:1.10.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:1.13.8.RELEASE" level="project" />
     <orderEntry type="module" module-name="service-order-api" />
+    <orderEntry type="library" name="Maven: org.python:jython:2.5.3" level="project" />
   </component>
 </module>

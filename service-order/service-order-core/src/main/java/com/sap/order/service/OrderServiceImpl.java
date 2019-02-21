@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.python.util.PythonInterpreter;
 
 @Service
 public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
@@ -111,6 +112,13 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
     @Override
     public List<OrderEO> getOrdersByUserId(String id) {
         return orderRepository.findAllByUserid(id);
+    }
+
+    @Override
+    public List<DishEO> getRecommendations(String dishId) {
+        PythonInterpreter interpreter = new PythonInterpreter();
+
+        return null;
     }
 
 }
