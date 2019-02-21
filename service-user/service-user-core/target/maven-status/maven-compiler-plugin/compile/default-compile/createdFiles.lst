@@ -1,0 +1,6 @@
+com\sap\user\controller\UserController.class
+com\sap\user\dao\UserRepository.class
+com\sap\user\domain\UserEO.class
+com\sap\user\service\UserService.class
+com\sap\user\context\UserApplication.class
+com\sap\user\service\UserServiceImpl.class
