@@ -58,10 +58,11 @@ body:
 10.87.131.170:8080/api/getRecommendation
 body:
 {
-	"id":"1"   //this is should be the "sid" of dish, "sid" is used to call api of recommendation, which limits the id to be int type.
+	"id":"1"   
+	//this is should be the "sid" of dish, "sid" is used to call api of recommendation, which limits the id to be int type.
 }
 output:
-{"ids": ["64149", "296478", "298430", "355275", "380824"]}
+{"ids": ["20", "9", "1", "3", "4"]}
 
 ```
 
