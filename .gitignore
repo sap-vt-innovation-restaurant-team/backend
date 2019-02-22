@@ -1,3 +1,11 @@
 .idea\
 target\
 
+service-user-core.iml
+service-user.iml
+service-user-api.iml
+eureka.iml
+service-user-core.iml
+service-user.iml
+zuul.iml
+base.iml
